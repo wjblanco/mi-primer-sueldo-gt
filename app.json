@@ -8,11 +8,6 @@
     "scheme": "miprimersueldogt",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#FAFAF8"
-    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "gt.miprimersueldo.app",
@@ -36,7 +31,16 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#FAFAF8"
+        }
+      ]
     ],
     "extra": {
       "eas": {
