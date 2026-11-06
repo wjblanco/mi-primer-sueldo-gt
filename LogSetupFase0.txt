@@ -1,0 +1,37 @@
+▶ Aplicando correcciones a motores y pruebas de la Fase 0...
+▶ Ajustando RANGO_BUSQUEDA_SO_MAX a 100000...
+  ✓ calculo.ts actualizado
+▶ Corrigiendo src/engine/__tests__/isr.test.ts...
+▶ Corrigiendo src/engine/__tests__/calculoInverso.test.ts...
+
+▶ Corriendo typecheck...
+npm notice run mi-primer-sueldo-gt@1.0.0 typecheck
+npm notice run tsc --noEmit
+
+▶ Corriendo pruebas...
+npm notice run mi-primer-sueldo-gt@1.0.0 test
+npm notice run jest --silent
+ PASS  src/engine/__tests__/isr.test.ts
+ FAIL  src/engine/__tests__/calculoInverso.test.ts
+  ● MotorCalculoInverso › CP-35: neto Q99,999 no desborda y converge dentro del rango
+
+    expect(received).toBeLessThan(expected)
+
+    Expected: < 100000
+    Received:   100000
+
+      37 |     const r = calcularSueldoOrdinario(99999, PARAMS_2026);
+      38 |     expect(r.sueldoOrdinario).toBeGreaterThan(0);
+    > 39 |     expect(r.sueldoOrdinario).toBeLessThan(100000);
+         |                               ^
+      40 |     expect(r.convergio).toBe(true);
+      41 |     expect(Math.abs(r.netoCalculado - 99999)).toBeLessThanOrEqual(1);
+      42 |   });
+
+      at Object.<anonymous> (src/engine/__tests__/calculoInverso.test.ts:39:31)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       1 failed, 13 passed, 14 total
+Snapshots:   0 total
+Time:        4.501 s
+
